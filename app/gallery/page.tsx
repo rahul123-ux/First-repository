@@ -21,7 +21,6 @@ const videos = [
   { src: "/video6-fixed-fixed.mp4", poster: "/video6-fixed-fixed-thumb.jpg" },
   { src: "/gallery8-fixed.mp4", poster: "/gallery8-fixed-thumb.jpg" },
   { src: "/gallery27-fixed.mp4", poster: "/gallery27-fixed-thumb.jpg" },
-  { src: "/gallery28-fixed.mp4", poster: "/gallery28-fixed-thumb.jpg" },
   { src: "/gallery29-fixed.mp4", poster: "/gallery29-fixed-thumb.jpg" },
   { src: "/gallery23-fixed.mp4", poster: "/gallery23-fixed-thumb.jpg" },
   { src: "/gallery25-fixed.mp4", poster: "/gallery25-fixed-thumb.jpg" },
