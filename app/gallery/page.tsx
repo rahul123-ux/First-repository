@@ -4,18 +4,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const images = [
-  "/gallery1.jpg", "/gallery2.jpg", "/gallery3.jpg", "/gallery4.jpg",
-  "/gallery5.jpg", "/gallery6.jpg", "/gallery7.png", "/gallery9.JPG",
-  "/gallery10.JPG", "/gallery11.JPG", "/gallery12.JPG", "/gallery13.JPG",
-  "/gallery14.JPG", "/gallery15.JPG", "/gallery16.JPG", "/gallery17.JPG",
-  "/gallery18.JPG", "/gallery19.jpg", "/gallery20.jpg", "/gallery21.jpg",
-  "/gallery22.jpg", "/gallery24.jpg",
+  "/gallery1.webp", "/gallery2.webp", "/gallery3.webp", "/gallery4.webp",
+  "/gallery5.webp", "/gallery6.webp", "/gallery7.webp", "/gallery9.webp",
+  "/gallery10.webp", "/gallery11.webp", "/gallery12.webp", "/gallery13.webp",
+  "/gallery14.webp", "/gallery15.webp", "/gallery16.webp", "/gallery17.webp",
+  "/gallery18.webp", "/gallery19.webp", "/gallery20.webp", "/gallery21.webp",
+  "/gallery22.webp", "/gallery24.webp",
 ];
 
 const videos = [
-  "/video1.MP4", "/video2.MP4", "/video3.MP4", "/video4.MP4", "/video5.MP4",
-  "/video6.MP4", "/gallery8.MOV", "/gallery27.MOV", "/gallery28.MOV",
-  "/gallery29.MOV", "/gallery23.MP4", "/gallery25.MP4", "/gallery26.MP4",
+  { src: "/video1-fixed.mp4", poster: "/video1-fixed-thumb.jpg" },
+  { src: "/video2-fixed.mp4", poster: "/video2-fixed-thumb.jpg" },
+  { src: "/video3-fixed.mp4", poster: "/video3-fixed-thumb.jpg" },
+  { src: "/video4-fixed.mp4", poster: "/video4-fixed-thumb.jpg" },
+  { src: "/video5-fixed-fixed.mp4", poster: "/video5-fixed-fixed-thumb.jpg" },
+  { src: "/video6-fixed-fixed.mp4", poster: "/video6-fixed-fixed-thumb.jpg" },
+  { src: "/gallery8-fixed.mp4", poster: "/gallery8-fixed-thumb.jpg" },
+  { src: "/gallery27-fixed.mp4", poster: "/gallery27-fixed-thumb.jpg" },
+  { src: "/gallery28-fixed.mp4", poster: "/gallery28-fixed-thumb.jpg" },
+  { src: "/gallery29-fixed.mp4", poster: "/gallery29-fixed-thumb.jpg" },
+  { src: "/gallery23-fixed.mp4", poster: "/gallery23-fixed-thumb.jpg" },
+  { src: "/gallery25-fixed.mp4", poster: "/gallery25-fixed-thumb.jpg" },
+  { src: "/gallery26-fixed.mp4", poster: "/gallery26-fixed-thumb.jpg" },
 ];
 
 export default function Gallery() {
@@ -35,26 +45,19 @@ export default function Gallery() {
 
         {/* Tabs */}
         <div className="flex justify-center gap-6 mt-8">
-          <button
-            onClick={() => setActiveTab("pictures")}
-            className={`px-6 py-2 rounded-full font-medium transition ${
-              activeTab === "pictures"
-                ? "bg-yellow-700 text-white shadow"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            Pictures
-          </button>
-          <button
-            onClick={() => setActiveTab("videos")}
-            className={`px-6 py-2 rounded-full font-medium transition ${
-              activeTab === "videos"
-                ? "bg-yellow-700 text-white shadow"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            Videos
-          </button>
+          {["pictures", "videos"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab as "pictures" | "videos")}
+              className={`px-6 py-2 rounded-full font-medium transition cursor-pointer ${
+                activeTab === tab
+                  ? "bg-yellow-700 text-white shadow"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
         </div>
       </section>
 
@@ -85,7 +88,7 @@ export default function Gallery() {
               >
                 <Image
                   src={src}
-                  alt={`Work ${i + 1}`}
+                  alt={`Gallery image ${i + 1}`}
                   fill
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -95,10 +98,10 @@ export default function Gallery() {
             ))}
 
           {activeTab === "videos" &&
-            videos.map((src, i) => (
+            videos.map(({ src, poster }, i) => (
               <motion.div
                 key={i}
-                className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-md cursor-pointer bg-black flex items-center justify-center"
+                className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-md cursor-pointer bg-black"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 variants={{
@@ -111,12 +114,11 @@ export default function Gallery() {
                   src={src}
                   className="w-full h-full object-cover"
                   muted
+                  controls
                   preload="metadata"
-                  poster="/video-thumbnail.jpg" // fallback preview image
+                  poster={poster}
+                  aria-label={`Video ${i + 1}`}
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-bold text-lg">
-                  ▶ Play Video
-                </div>
               </motion.div>
             ))}
         </motion.div>
@@ -138,7 +140,7 @@ export default function Gallery() {
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
             >
-              {selectedMedia.endsWith(".mp4") || selectedMedia.endsWith(".MOV") ? (
+              {selectedMedia.endsWith(".mp4") || selectedMedia.endsWith(".mov") ? (
                 <video
                   src={selectedMedia}
                   controls

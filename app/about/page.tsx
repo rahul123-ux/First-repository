@@ -24,7 +24,7 @@ export default function About() {
         {/* Left Image */}
         <div className="relative w-full h-72 md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="/image.png"
+            src="/image.webp"
             alt="About Catering"
             width={600}
             height={400}

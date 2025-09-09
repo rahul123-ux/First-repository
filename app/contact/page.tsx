@@ -63,7 +63,7 @@ export default function Contact() {
         {/* Contact Image */}
         <div className="relative w-full h-80 md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
           <Image
-            src="/image.png"
+            src="/image.webp"
             alt="Royal Caterers Contact Office"
             fill
             priority={false}
