@@ -5,17 +5,17 @@ import { useState } from "react";
 
 const images = [
   "/gallery1.jpg", "/gallery2.jpg", "/gallery3.jpg", "/gallery4.jpg",
-  "/gallery5.jpg", "/gallery6.jpg", "/gallery7.png", "/gallery9.jpg",
-  "/gallery10.jpg", "/gallery11.jpg", "/gallery12.jpg", "/gallery13.jpg",
-  "/gallery14.jpg", "/gallery15.jpg", "/gallery16.jpg", "/gallery17.jpg",
-  "/gallery18.jpg", "/gallery19.jpg", "/gallery20.jpg", "/gallery21.jpg",
+  "/gallery5.jpg", "/gallery6.jpg", "/gallery7.png", "/gallery9.JPG",
+  "/gallery10.JPG", "/gallery11.JPG", "/gallery12.JPG", "/gallery13.JPG",
+  "/gallery14.JPG", "/gallery15.JPG", "/gallery16.JPG", "/gallery17.JPG",
+  "/gallery18.JPG", "/gallery19.jpg", "/gallery20.jpg", "/gallery21.jpg",
   "/gallery22.jpg", "/gallery24.jpg",
 ];
 
 const videos = [
-  "/video1.mp4", "/video2.mp4", "/video3.mp4", "/video4.mp4", "/video5.mp4",
-  "/video6.mp4", "/gallery8.MOV", "/gallery27.MOV", "/gallery28.MOV",
-  "/gallery29.MOV", "/gallery23.mp4", "/gallery25.mp4", "/gallery26.mp4",
+  "/video1.MP4", "/video2.MP4", "/video3.MP4", "/video4.MP4", "/video5.MP4",
+  "/video6.MP4", "/gallery8.MOV", "/gallery27.MOV", "/gallery28.MOV",
+  "/gallery29.MOV", "/gallery23.MP4", "/gallery25.MP4", "/gallery26.MP4",
 ];
 
 export default function Gallery() {

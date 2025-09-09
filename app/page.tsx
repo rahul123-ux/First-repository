@@ -97,7 +97,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 justify-center items-center"
         >
-          {["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"].map((src, i) => (
+          {["/gallery1.jpg", "/gallery2.jpg", "/gallery3.jpg", "/gallery4.jpg"].map((src, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.8 }}
