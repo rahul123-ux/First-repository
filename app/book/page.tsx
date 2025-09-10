@@ -62,7 +62,7 @@ export default function BookPage() {
         {/* CTA */}
         <div className="pt-6 flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="tel:+919781394701"
+            href="tel:+918968182177"
             className="inline-block bg-yellow-700 text-white px-8 py-3 rounded-full shadow hover:bg-yellow-800 transition"
           >
             Call Us Now
