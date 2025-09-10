@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+
 
 export default function BookPage() {
   return (
@@ -23,7 +25,7 @@ export default function BookPage() {
         className="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-lg space-y-8 text-center"
       >
         <p className="text-lg text-gray-700 leading-relaxed">
-          We would love to make your special event truly memorable.  
+          We would love to make your special event truly memorable.
           Reach out to us through the details below:
         </p>
 
@@ -75,6 +77,14 @@ export default function BookPage() {
           </a>
         </div>
       </motion.div>
+      <section className="flex justify-center py-12 px-4">
+        <Link href="/">
+          <button className="bg-yellow-700 text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg shadow-md hover:bg-yellow-800 transition w-full sm:w-auto cursor-pointer">
+            Back to Home
+          </button>
+        </Link>
+      </section>
+
     </div>
   );
 }

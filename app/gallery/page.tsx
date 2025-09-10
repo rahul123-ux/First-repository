@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
+
 
 const images = [
   "/gallery1.webp", "/gallery2.webp", "/gallery3.webp", "/gallery4.webp",
@@ -48,11 +50,10 @@ export default function Gallery() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab as "pictures" | "videos")}
-              className={`px-6 py-2 rounded-full font-medium transition cursor-pointer ${
-                activeTab === tab
-                  ? "bg-yellow-700 text-white shadow"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
+              className={`px-6 py-2 rounded-full font-medium transition cursor-pointer ${activeTab === tab
+                ? "bg-yellow-700 text-white shadow"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
@@ -160,6 +161,13 @@ export default function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
+      <section className="flex justify-center py-12 px-4">
+        <Link href="/">
+          <button className="bg-yellow-700 text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg shadow-md hover:bg-yellow-800 transition w-full sm:w-auto cursor-pointer">
+            Back to Home
+          </button>
+        </Link>
+      </section>
     </div>
   );
 }

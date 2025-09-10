@@ -92,11 +92,14 @@ export default function About() {
       </section>
 
       {/* Optional Navigation Example */}
-      <section className="text-center py-12">
-        <Link href="/contact" className="text-yellow-700 font-semibold underline">
-          Contact Us
+      <section className="flex justify-center py-12 px-4">
+        <Link href="/">
+          <button className="bg-yellow-700 text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg shadow-md hover:bg-yellow-800 transition w-full sm:w-auto cursor-pointer">
+            Back to Home
+          </button>
         </Link>
       </section>
+
     </div>
   );
 }

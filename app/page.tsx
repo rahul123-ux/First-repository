@@ -58,7 +58,6 @@ export default function Home() {
           <Link href="/" className="hover:text-yellow-700">Home</Link>
           <Link href="/about" className="hover:text-yellow-700">About</Link>
           <Link href="/contact" className="hover:text-yellow-700">Contact</Link>
-          <Link href="/gallery" className="hover:text-yellow-700">Gallery</Link>
           <Link href="/book" className="hover:text-yellow-700">Book Now</Link>
         </motion.nav>
       )}
@@ -82,10 +81,10 @@ export default function Home() {
               Book Now
             </Link>
             <Link
-              href="/about"
+              href="/gallery"
               className="bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full hover:bg-yellow-200 shadow"
             >
-              Know More
+              Gallery
             </Link>
           </div>
         </div>
