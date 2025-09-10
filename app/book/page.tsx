@@ -35,7 +35,7 @@ export default function BookPage() {
               href="tel:+919781394701"
               className="text-lg font-medium text-gray-800 hover:underline"
             >
-              +91 9781394701
+              +91 8968182177
             </a>
           </div>
 

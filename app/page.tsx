@@ -144,7 +144,7 @@ export default function Home() {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Get In Touch</h3>
-            <p className="flex items-center justify-center md:justify-start gap-2"><Phone size={18}/> +91 9781394701</p>
+            <p className="flex items-center justify-center md:justify-start gap-2"><Phone size={18}/> +91 8968182177</p>
             <p className="flex items-center justify-center md:justify-start gap-2"><Mail size={18}/> beantsinghpawar77@gmail.com</p>
             <p className="flex items-center justify-center md:justify-start gap-2"><Instagram size={18}/> @royalcaterers</p>
             <p className="flex items-center justify-center md:justify-start gap-2"><Facebook size={18}/> @royalcaterers</p>
@@ -158,7 +158,7 @@ export default function Home() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919781394701"
+        href="https://wa.me/918968182177"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50"
